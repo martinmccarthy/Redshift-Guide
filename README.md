@@ -3,7 +3,7 @@ Prerequisites:
     - Create a cluster in the amazon redshift dashboard.
     - Define an admin user and password for access.
     - Enter the IAM dashboard and provide your user with full redshift access.
-    - Run the setup data in the amazon redshift cluster that you are working in. This is located in setupscript.sql
+    - Run the setup data in the amazon redshift cluster that you are working in. This is located in [setupscript.sql](../blob/master/setupscript.sql)
 
     Set up an S3 bucket:
     - In the S3 dashboard, create a bucket
@@ -24,3 +24,8 @@ Now that all of this is defined:
     - Enter the outputs tab, in here you should see RedshiftDataApiWebSocketEndpoint. Copy this value and input it into the index.html under the variable wsEndpoint.
 
 This should allow you to successfully run an external connection to amazon redshift for querying. Happy coding!
+
+
+Some more useful links / References utilized:
+[Getting Started With Amazon Redshift Data API](https://github.com/aws-samples/getting-started-with-amazon-redshift-data-api/blob/main/use-cases/api-gateway-websocket-redshift-event-driven-web-app/)
+
