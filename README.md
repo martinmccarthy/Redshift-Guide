@@ -8,12 +8,12 @@ Prerequisites:
     Set up an S3 bucket:
     - In the S3 dashboard, create a bucket
     - IMPORTANT: Whatever bucket name you define here you must edit in the .yaml file, this is found under the parameters 'DDLScriptS3Path' and 'QueryScriptS3Path'
-    - Inside of the objects tab of your newly created bucket, insert the queryscript.sql and setupscript.sql
+    - Inside of the objects tab of your newly created bucket, insert the [queryscript.sql](../master/queryscript.sql) and [setupscript.sql](../master/setupscript.sql)
     
     Set up a CloudFormation Stack:
     - Enter the stacks tab from the CloudFormation dashboard 
     - Create a stack with new resources
-    - Under specify template, upload the provided yaml file, which will set up your CloudFormation 
+    - Under specify template, upload the provided [redshift.yaml](../master/redshift.yaml) file, which will set up your CloudFormation 
     - Enter a desired stack name
     - On your redshift cluter's general information page, grab your endpoint and enter this into the RedshiftClusterEndpoint input
     - In 'DbUsername' enter the Redshift database username you've defined in the previous set up step.
@@ -28,4 +28,5 @@ This should allow you to successfully run an external connection to amazon redsh
 
 Some more useful links / References utilized:
 [Getting Started With Amazon Redshift Data API](https://github.com/aws-samples/getting-started-with-amazon-redshift-data-api/blob/main/use-cases/api-gateway-websocket-redshift-event-driven-web-app/)
-
+[Getting Started With AWSCloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html)
+[Creating your first S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html)
