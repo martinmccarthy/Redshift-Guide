@@ -27,6 +27,8 @@ This should allow you to successfully run an external connection to amazon redsh
 
 
 Some more useful links / References utilized:
-[Getting Started With Amazon Redshift Data API](https://github.com/aws-samples/getting-started-with-amazon-redshift-data-api/blob/main/use-cases/api-gateway-websocket-redshift-event-driven-web-app/)
+[Getting Started With Amazon Redshift Data API](https://github.com/aws-samples/getting-started-with-amazon-redshift-data-api/blob/main/use-cases/api-gateway-websocket-redshift-event-driven-web-app/) 
+
 [Getting Started With AWSCloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html)
+
 [Creating your first S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html)
