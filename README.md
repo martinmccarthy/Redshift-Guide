@@ -1,6 +1,6 @@
 Prerequisites:
     
-    Set up an amazon redshift cluster:
+Set up an amazon redshift cluster:
     - Create a cluster in the amazon redshift dashboard.
     - Define an admin user and password for access.
     - Enter the IAM dashboard and provide your user with full redshift access.
@@ -11,7 +11,7 @@ Prerequisites:
     - IMPORTANT: Whatever bucket name you define here you must edit in the .yaml file, this is found under the parameters 'DDLScriptS3Path' and 'QueryScriptS3Path'
     - Inside of the objects tab of your newly created bucket, insert the [queryscript.sql](../master/queryscript.sql) and [setupscript.sql](../master/setupscript.sql)
     
-    Set up a CloudFormation Stack:
+Set up a CloudFormation Stack:
     - Enter the stacks tab from the CloudFormation dashboard 
     - Create a stack with new resources
     - Under specify template, upload the provided [redshift.yaml](../master/redshift.yaml) file, which will set up your CloudFormation 
@@ -22,7 +22,7 @@ Prerequisites:
 
 Now that all of this is defined:
     
-    Inside of your CloudFormation Stack:
+Inside of your CloudFormation Stack:
     - Enter the outputs tab, in here you should see RedshiftDataApiWebSocketEndpoint. Copy this value and input it into the index.html under the variable wsEndpoint.
 
 This should allow you to successfully run an external connection to amazon redshift for querying. Happy coding!
