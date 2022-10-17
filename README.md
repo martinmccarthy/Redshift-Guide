@@ -6,7 +6,7 @@ Set up an amazon redshift cluster:
     - Enter the IAM dashboard and provide your user with full redshift access.
     - Run the setup data in the amazon redshift cluster that you are working in. This is located in [setupscript.sql](../master/setupscript.sql)
     
-    Set up an S3 bucket:
+Set up an S3 bucket:
     - In the S3 dashboard, create a bucket
     - IMPORTANT: Whatever bucket name you define here you must edit in the .yaml file, this is found under the parameters 'DDLScriptS3Path' and 'QueryScriptS3Path'
     - Inside of the objects tab of your newly created bucket, insert the [queryscript.sql](../master/queryscript.sql) and [setupscript.sql](../master/setupscript.sql)
