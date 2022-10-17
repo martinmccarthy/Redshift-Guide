@@ -1,0 +1,2 @@
+SELECT ceo
+FROM companies

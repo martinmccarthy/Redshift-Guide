@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<title>Event Driven Data Access from Amazon Redshift using Amazon API Gateway WebSockets </title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jq/jquery-ui.css">
+  <script src="jq/jquery-3.6.0.min.js"></script>
+  <script src="jq/jquery-ui.js"></script>
+  <style>
+  .ui-datepicker-calendar {
+      display: none;
+  }
+  </style>
+  <script>
+
+
+  var wsEndpoint = "jg919u8ulf.execute-api.us-east-2.amazonaws.com/Prod";
+
+  function init()
+  {
+    var company = $( "#company" ).val().replace(/\s/g, "+");
+    var wsUri = wsEndpoint + '?company_name='+company;
+    console.log(wsUri);
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+  }
+
+
+  function onOpen(evt)
+  {
+    writeToScreen("Fetching Results from Server...");
+  }
+
+  function onClose(evt)
+  {
+    writeToScreen("---");
+  }
+
+  function onMessage(evt)
+  {
+    var output = JSON.parse(evt.data);
+    var tableHeaders = output.columns.join('</th><th>');
+
+    var rows="";
+    for (let record of output.records) {
+      var rows= rows + '<tr><td>' + record.join('</td><td>')+ '</td></tr>';
+    }
+
+    $('#outputTable').html('<tr><th>' + tableHeaders + '</th></tr>' + rows);
+
+    websocket.close();
+  }
+
+  function onError(evt)
+  {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+  }
+
+
+  function writeToScreen(message)
+  {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    $('#outputText').html(pre);
+  }
+
+</script>
+
+</head>
+<body>
+<h1>Lookup a company's CEO</h1>
+<label for="company">Company :</label>
+<input name="company" id="company" class="companyPicker" />
+<button type="button" onclick=init()>Submit</button>
+<table id="outputTable"> </table>
+<div id="outputText"></div>
+</body>
+</html>
