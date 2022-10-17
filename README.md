@@ -3,7 +3,7 @@ Prerequisites:
     - Create a cluster in the amazon redshift dashboard.
     - Define an admin user and password for access.
     - Enter the IAM dashboard and provide your user with full redshift access.
-    - Run the setup data in the amazon redshift cluster that you are working in. This is located in [setupscript.sql](../blob/master/setupscript.sql)
+    - Run the setup data in the amazon redshift cluster that you are working in. This is located in [setupscript.sql](../master/setupscript.sql)
 
     Set up an S3 bucket:
     - In the S3 dashboard, create a bucket
